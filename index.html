@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>kjhoverlay</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+html, body{
+  font-family: 'Press Start 2P';
+  overflow: hidden;
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+p{
+  line-height: 30px;
+  position: absolute;
+  bottom: 350px;
+  left: 10px;
+  color: #fff;
+  background: #61B970;
+  text-align: center;
+}
+.line::after{
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: -3px;
+  background: #61B970;
+}
+.line{
+  height: 150px;
+  width: 4px;
+  background: #61B970;
+  position: absolute;
+  bottom: 65px;
+  left: 10px;
+  animation: line 60s infinite;
+}
+.td{
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: type 60s infinite;
+}
+.rd{
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: type 60s 5s infinite;
+}
+.rs{
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: type 60s 10s infinite;
+}
+
+@keyframes type{ 
+  0% { width: 0; color: transparent;}
+  1%{ width: 250px; color: #fff;}
+  10%{ width: 250px; color: #fff;}
+  11%{ width: 0; color: transparent;}
+  100%{ width: 0; color: transparent;}
+} 
+@keyframes line{ 
+  0% { height: 0px; bottom: 0}
+  1%{ height: 140px; bottom: 365px}
+  8.5%{ height: 140px; bottom: 365px}
+  9.5%{ height: 100px; bottom: 365px}
+  17%{ height: 100px; bottom: 365px}
+  18%{ height: 60px;  bottom: 365px}
+  26%{ height: 60px;  bottom: 365px}
+  28% { height: 0px; bottom: 0}
+  100%{ height: 0px; bottom: 0}
+
+} 
+
+/* svg stuff */
+.ironside{
+  position: absolute;
+  top: -60px;
+  left: 5px;
+  width: 175px;
+}
+.logo{
+  position: absolute;
+  top: 15px;
+  left: -200px;
+  height: 170px;
+}
+ .logo path,  .logo line, .logo polyline{
+  stroke-width 8;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 60s ease-in-out forwards infinite;
+}
+ .ironside path,  .ironside line, .ironside polyline{
+  stroke: #fff;
+  stroke-width 8;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 60s ease-in-out 30s forwards infinite;
+}
+polygon{
+  opacity: 0;
+  animation: fill 60s ease-in-out 30s forwards infinite;
+}
+@keyframes dash {
+  0%{
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+    stroke-dashoffset: 1000;
+  }
+ 10%{
+    stroke-dashoffset: 0;
+  }
+  35%{
+    stroke-dashoffset: 0;
+  }
+  40%{
+    stroke-dashoffset: 1000;
+  }
+  100%{
+    stroke-dashoffset: 1000;
+  }
+}
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  3%{
+    opacity: 1;
+  }
+  35%{
+    opacity: 1;
+  }
+  38%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+		</style>
+	</head>
+	<body>
+		<div class="line"></div>
+		<p class="td">Top Donation</p>
+
+		<p class="rd">Recent Donation</p>
+
+		<p class="rs">Recent Sub</p>
+
+
+		<svg class="logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+<line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="214.316" y1="43.667" x2="286.039" y2="43.667"/>
+<line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="154.548" y1="138.333" x2="345.808" y2="138.333"/>
+<line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="250.178" y1="55.138" x2="250.178" y2="126.861"/>
+<polyline class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" points="214.316,149.138 214.316,414.334 
+	214.316,420.5 250,450.5 285.666,421.5 285.666,414.334 285.666,149.138 "/>
+<line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="166.333" y1="149.138" x2="166.333" y2="175.312"/>
+<line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="333.666" y1="149.138" x2="333.666" y2="175.312"/>
+<line class="h" fill="none" stroke="#ffffff" stroke-width="24" stroke-miterlimit="10" x1="166.333" y1="199.221" x2="166.333" y2="342.665"/>
+<line class="h" fill="none" stroke="#ffffff" stroke-width="24" stroke-miterlimit="10" x1="333.666" y1="199.221" x2="333.666" y2="342.665"/>
+<line class="h" fill="none" stroke="#ffffff" stroke-width="24" stroke-miterlimit="10" x1="177.25" y1="258.5" x2="322" y2="258.5"/>
+</svg>
+
+<svg class="ironside" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="250px" viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve">
+<g>
+	<polygon fill="#61B970" points="289.489,156.273 284.606,153.314 276.014,144.468 261.67,117.576 261.952,114.107 255.375,101.932 
+		250.717,99.109 249.511,89.582 258.131,92.377 280.775,83.044 254.011,37.1 245.809,40.623 241.998,47.414 230.629,52.66 
+		226.146,60.559 215.572,53.604 216.091,66.316 207.011,66.057 196.633,73.062 188.85,72.802 181.586,77.991 207.011,124.689 
+		226.728,110.161 228.803,101.34 236.327,107.307 236.327,112.755 243.332,124.689 246.445,126.246 262.011,152.449 
+		265.124,164.383 265.124,170.091 278.096,168.553 281.448,166.572 	"/>
+</g>
+<path fill="none" stroke="#030304" stroke-width="8" stroke-miterlimit="10" d="M178.542,170.091c0,0-27.993-32.805-12.041-82.602
+	c15.953-49.797,69.113-59.608,80.98-59.246s49.114,1.052,75.928,37.593c26.812,36.541,13.742,88.694-0.771,104.255"/>
+<line fill="none" stroke="#030304" stroke-width="14" stroke-miterlimit="10" x1="71.455" y1="164.383" x2="71.455" y2="207.969"/>
+<line fill="none" stroke="#030304" stroke-width="14" stroke-miterlimit="10" x1="318.697" y1="164.956" x2="318.697" y2="208.542"/>
+<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M88.75,207.969V171.25h34c0,0,8,12.25,0,19.75
+	l-11.666-0.083l12.707,11.874v5.178"/>
+<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M147.5,170.091h32c0,0,5.75,2.352,5.75,14.926
+	s-4.75,16.574-4.75,16.574h-33c0,0-5.75-2.5-5.75-15.75S147.5,170.091,147.5,170.091z"/>
+<polyline fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" points="200.415,207.726 200.415,171.007 
+	213.665,171.007 235.453,201.348 246.165,201.348 246.165,165.956 "/>
+<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M258.725,201.591H296.5c0,0,4.25-0.841,4.25-6.591
+	s-5-7.886-5-7.886h-25.5c0,0-5.75-0.114-6.5-7.364s5.5-8.5,5.5-8.5h38.162"/>
+<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M342.25,170.091h29.5c0,0,5.75,1.907,5.75,16.658
+	s-5.5,14.842-5.5,14.842h-29.75h-6v-31.5H342.25z"/>
+<polyline fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" points="434.625,170.091 394.5,170.091 
+	394.5,201.591 434.625,201.591 "/>
+<line fill="none" stroke="#030304" stroke-width="7" stroke-miterlimit="10" x1="405.75" y1="185.841" x2="421.75" y2="185.841"/>
+</svg>
+
+	</body>
+  </html>
