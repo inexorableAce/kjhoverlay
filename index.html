@@ -86,9 +86,9 @@ p{
 /* svg stuff */
 .ironside{
   position: absolute;
-  top: -60px;
+  top: -200px;
   left: 5px;
-  width: 175px;
+  width: 100px;
 }
 .logo{
   position: absolute;
@@ -97,21 +97,15 @@ p{
   height: 170px;
 }
  .logo path,  .logo line, .logo polyline{
-  stroke-width 8;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   animation: dash 60s ease-in-out forwards infinite;
 }
- .ironside path,  .ironside line, .ironside polyline{
-  stroke: #fff;
-  stroke-width 8;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: dash 60s ease-in-out 30s forwards infinite;
-}
-polygon{
-  opacity: 0;
-  animation: fill 60s ease-in-out 30s forwards infinite;
+.ironside path{
+  stroke-width: 8;
+  stroke-dasharray: 3400;
+  stroke-dashoffset: 3400;
+  animation: dash2 60s ease-in-out 30s forwards infinite, fill 60s ease-in-out 30s forwards infinite;
 }
 @keyframes dash {
   0%{
@@ -134,21 +128,45 @@ polygon{
     stroke-dashoffset: 1000;
   }
 }
-@keyframes fill {
-  0% {
+@keyframes dash2 {
+  0%{
     opacity: 0;
   }
-  3%{
+  1% {
     opacity: 1;
+    stroke-dashoffset: 3400;
+  }
+ 10%{
+    stroke-dashoffset: 0;
   }
   35%{
-    opacity: 1;
+    stroke-dashoffset: 0;
   }
-  38%{
-    opacity: 0;
+  40%{
+    stroke-dashoffset: 3400;
   }
   100%{
-    opacity: 0;
+    stroke-dashoffset: 3400;
+  }
+}
+@keyframes fill {
+  0% {
+    fill: transparent;
+  }
+  5%{
+    fill: transparent;
+  }
+  8%{
+    fill: #61B970;
+  }
+  35%{
+    fill: #61B970;
+  }
+  38%{
+    fill: transparent;
+  }
+  100%{
+    fill: transparent;
   }
 }
 		</style>
@@ -163,7 +181,7 @@ polygon{
 
 
 		<svg class="logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-			width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+			width="500px" height="500px" viewbox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
 <line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="214.316" y1="43.667" x2="286.039" y2="43.667"/>
 <line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="154.548" y1="138.333" x2="345.808" y2="138.333"/>
 <line class="sword" fill="none" stroke="#61B970" stroke-width="24" stroke-miterlimit="10" x1="250.178" y1="55.138" x2="250.178" y2="126.861"/>
@@ -176,33 +194,10 @@ polygon{
 <line class="h" fill="none" stroke="#ffffff" stroke-width="24" stroke-miterlimit="10" x1="177.25" y1="258.5" x2="322" y2="258.5"/>
 </svg>
 
-<svg class="ironside" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="500px" height="250px" viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve">
-<g>
-	<polygon fill="#61B970" points="289.489,156.273 284.606,153.314 276.014,144.468 261.67,117.576 261.952,114.107 255.375,101.932 
-		250.717,99.109 249.511,89.582 258.131,92.377 280.775,83.044 254.011,37.1 245.809,40.623 241.998,47.414 230.629,52.66 
-		226.146,60.559 215.572,53.604 216.091,66.316 207.011,66.057 196.633,73.062 188.85,72.802 181.586,77.991 207.011,124.689 
-		226.728,110.161 228.803,101.34 236.327,107.307 236.327,112.755 243.332,124.689 246.445,126.246 262.011,152.449 
-		265.124,164.383 265.124,170.091 278.096,168.553 281.448,166.572 	"/>
-</g>
-<path fill="none" stroke="#030304" stroke-width="8" stroke-miterlimit="10" d="M178.542,170.091c0,0-27.993-32.805-12.041-82.602
-	c15.953-49.797,69.113-59.608,80.98-59.246s49.114,1.052,75.928,37.593c26.812,36.541,13.742,88.694-0.771,104.255"/>
-<line fill="none" stroke="#030304" stroke-width="14" stroke-miterlimit="10" x1="71.455" y1="164.383" x2="71.455" y2="207.969"/>
-<line fill="none" stroke="#030304" stroke-width="14" stroke-miterlimit="10" x1="318.697" y1="164.956" x2="318.697" y2="208.542"/>
-<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M88.75,207.969V171.25h34c0,0,8,12.25,0,19.75
-	l-11.666-0.083l12.707,11.874v5.178"/>
-<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M147.5,170.091h32c0,0,5.75,2.352,5.75,14.926
-	s-4.75,16.574-4.75,16.574h-33c0,0-5.75-2.5-5.75-15.75S147.5,170.091,147.5,170.091z"/>
-<polyline fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" points="200.415,207.726 200.415,171.007 
-	213.665,171.007 235.453,201.348 246.165,201.348 246.165,165.956 "/>
-<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M258.725,201.591H296.5c0,0,4.25-0.841,4.25-6.591
-	s-5-7.886-5-7.886h-25.5c0,0-5.75-0.114-6.5-7.364s5.5-8.5,5.5-8.5h38.162"/>
-<path fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" d="M342.25,170.091h29.5c0,0,5.75,1.907,5.75,16.658
-	s-5.5,14.842-5.5,14.842h-29.75h-6v-31.5H342.25z"/>
-<polyline fill="none" stroke="#030304" stroke-width="12" stroke-miterlimit="10" points="434.625,170.091 394.5,170.091 
-	394.5,201.591 434.625,201.591 "/>
-<line fill="none" stroke="#030304" stroke-width="7" stroke-miterlimit="10" x1="405.75" y1="185.841" x2="421.75" y2="185.841"/>
-</svg>
+
+<svg class="ironside" xmlns="http://www.w3.org/2000/svg" width="566.9" height="566.9" viewbox="0 0 566.9 566.9">
+  <path fill="transparent" stroke="#61B970" d="M544.2 198.1c-14.5-25.6-35.1-48.6-61.3-68.2-25.9-19.4-56-34.7-89.5-45.3-34.5-10.9-71-16.5-108.7-16.5-37.6 0-74.2 5.6-108.7 16.5-33.4 10.6-63.5 25.9-89.5 45.3-26.2 19.6-46.8 42.6-61.3 68.2C10.2 225 2.5 253.6 2.5 283s7.7 58.1 22.9 84.9c14.5 25.6 35.1 48.6 61.3 68.2 25.9 19.4 56 34.7 89.5 45.3 34.5 11 71 16.5 108.7 16.5 37.6 0 74.2-5.6 108.7-16.5 33.5-10.6 63.6-25.9 89.5-45.3 26.2-19.6 46.8-42.6 61.3-68.2 15.2-26.9 22.9-55.4 22.9-84.9-.2-29.4-7.9-58-23.1-84.9zm-89 86.5v24.3l-24.6 6.1v-29.4c0-6.6 6.1-8 11.3-8 6 0 13.3 1.2 13.3 7zm64.2.4l-31.2 8.8c-6-16.8-23.8-28.5-43.8-28.5-26.6 0-54.9 17.4-54.9 49.8 0 24.2 17.1 48.6 55.4 48.6 23.8 0 40-11.3 45.8-31.9l.6-2-12.8 5.2-.2.3c-5.9 11.6-16.9 17.7-31.9 17.7-11.2 0-15.7-3.9-15.7-13.4v-13.2l55-14.4 18-4.7-2.1 16.9 33.4-13.5c-8.9 42.8-38.2 82.3-82.7 111.2-46.1 30-105.6 46.5-167.4 46.5-66.3 0-129-18.7-176.4-52.6-46.6-33.1-73.6-77.4-76.5-124.6l25.2-4.1-3 17.2 42.7-8.2-.2 55-13.2-.3v11.5h61c8.4 0 17.1 0 26.8-1.6 32.5-5.5 61.1-35.6 61.1-64.4 0-21.9-18-37.2-43.8-37.2H186c15.1-8.7 25-18.5 29.3-29.4l21.3-4.9V351h-13.4v11h63.9v-11h-14.6V203.1l-2.9.8-51.7 12.3c0-.8 0-1.5-.1-2.3-1.1-16.1-13.4-25.3-33.8-25.3-5.5 0-11.3.7-16.7 2l-83.6 20.9-1.8.5v13.3l15-3.6v55.9L72 283l3-15.9-43 10.3c.1-1.7.1-2.8.1-2.8 3-47.3 30.3-91.7 76.9-124.9 47.3-33.7 109.8-52.3 175.8-52.3 139.5 0 253 83.3 253 185.6 0 4.4-.2 8.9-.6 13.2l-19.7 5.5 1.9-16.7zm-379.2-75.7c3.3-.7 6.6-1.1 9.8-1.1 15 0 25.1 8 25.1 20 0 15.1-15.2 31.4-34.8 37.5l-.1-56.4zm0 69.4c2-.8 4.3-1.6 7.3-2.4 4.2-1 8.2-1.5 11.9-1.5 17.8 0 29.7 10.5 29.7 26.2 0 20-19.2 41-42.8 46.9-2.1.5-4.1.9-6.1 1.2v-70.4z"/>
+  <path fill="transparent" stroke="#61B970" class="st0" d="M386.3 264.2l-45 11.2v14.3l7.9-2.1v40.9c0 6-9 21.4-19 21.4-1.9 0-3.2-.4-4.1-1.2-2-2.1-1.9-7.7-1.9-13.7l-.1-67v-4l-46.4 11.4v14.3l9.4-2.3v40.9c0 11.2 0 20.1 3.8 26.5 4.2 7.1 12.4 10.3 26.5 10.3 13.6 0 24.8-4.6 31.7-13V364l50.6-2.4v-13l-13.5.7v-85.1z"/></svg>
 
 	</body>
   </html>
